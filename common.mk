@@ -108,9 +108,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.5 \
-    camera.device@3.2-impl:32 \
     libbson.vendor \
-    libxml2 \
     vendor.qti.hardware.camera.device@1.0:64
 
 # Dalvik
@@ -239,9 +237,7 @@ PRODUCT_PACKAGES += \
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
-    IPACM_cfg.xml \
-    libipanat \
-    liboffloadhal
+    IPACM_cfg.xml
 
 # IRQ
 PRODUCT_COPY_FILES += \
@@ -500,7 +496,6 @@ PRODUCT_PACKAGES += \
     libqsap_sdk \
     libwifi-hal-qcom \
     libwpa_client \
-    wificond \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
