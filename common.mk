@@ -38,14 +38,22 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_product=true \
     POSTINSTALL_PATH_product=bin/check_dynamic_partitions \
-    FILESYSTEM_TYPE_product=ext4 \
     POSTINSTALL_OPTIONAL_product=false
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=erofs \
     POSTINSTALL_OPTIONAL_system=true
+
+ifneq ($(WITH_GMS),true)
+AB_OTA_POSTINSTALL_CONFIG += \
+    FILESYSTEM_TYPE_product=ext4 \
+    FILESYSTEM_TYPE_system=ext4
+else
+AB_OTA_POSTINSTALL_CONFIG += \
+    FILESYSTEM_TYPE_product=erofs \
+    FILESYSTEM_TYPE_system=erofs
+endif
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
