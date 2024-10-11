@@ -132,11 +132,12 @@ LOC_HIDL_VERSION := 3.0
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(PLATFORM_PATH)/framework_compatibility_matrix.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix_legacy.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    device/qcom/common/vendor_framework_compatibility_matrix.xml \
+    device/qcom/common/vendor_framework_compatibility_matrix_legacy.xml \
+    hardware/lineage/interfaces/compatibility_matrices/compatibility_matrix.lineage.xml
+
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := device/qcom/common/compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/framework_manifest.xml
 TARGET_FS_CONFIG_GEN += \
     $(PLATFORM_PATH)/config.fs \
@@ -151,7 +152,7 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sle
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci androidboot.usbconfigfs=true
 BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.boot_devices=soc/7824900.sdhci
 BOARD_KERNEL_CMDLINE += androidboot.veritymode=eio
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_KERNEL_OFFSET := 0x00008000
