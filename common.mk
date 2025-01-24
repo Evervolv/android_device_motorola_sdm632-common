@@ -40,8 +40,13 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
+
+ifneq (,$(filter %channel, $(TARGET_PRODUCT)))
+AB_OTA_POSTINSTALL_CONFIG += FILESYSTEM_TYPE_system=erofs
+else
+AB_OTA_POSTINSTALL_CONFIG += FILESYSTEM_TYPE_system=ext4
+endif
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
