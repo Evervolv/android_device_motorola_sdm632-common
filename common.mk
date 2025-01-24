@@ -153,9 +153,11 @@ PRODUCT_PACKAGES += \
     libion.vendor
 
 # FM
+ifneq (,$(filter %river, $(TARGET_PRODUCT)))
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
+endif
 
 # GMS
 ifeq ($(WITH_GMS),true)
