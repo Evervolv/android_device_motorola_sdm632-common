@@ -123,7 +123,6 @@ TARGET_USES_GRALLOC1 := true
 # FM
 ifneq (,$(filter %river, $(TARGET_PRODUCT)))
 BOARD_HAVE_QCOM_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
 endif
 
 # GPS
