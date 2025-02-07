@@ -157,9 +157,11 @@ ifneq (,$(filter %river, $(TARGET_PRODUCT)))
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
-endif
 
 $(call soong_config_set_bool,libfmjni,no_fm_firmware,true)
+
+$(call soong_config_set_bool,libfmjni,no_fm_firmware,true)
+endif 
 
 # GMS
 ifeq ($(WITH_GMS),true)
