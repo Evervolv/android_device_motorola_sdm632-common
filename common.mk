@@ -329,6 +329,9 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
 # Recovery
+PRODUCT_PACKAGES += \
+    libinit_sdm632.recovery
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc
